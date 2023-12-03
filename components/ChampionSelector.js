@@ -1,6 +1,7 @@
+import champ from "@/info/champions.json"
 
-export default function ChampionSelector() {
+export default function ChampionSelector({level, champions, changeChampions}) {
     return (
-        <div>Champion Selector</div>
+        <div>{champ[0]["name"]}</div>
     )
 }

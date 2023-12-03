@@ -9,10 +9,21 @@ export default function Home() {
   const [champions, setChampions] = useState([])
   const [run, setRun] = useState(false);
 
+  function changeLevel(newLevel) {
+    setLevel(newLevel);
+  }
+
+  function changeChampions(newChampions) {
+    setChampions(newChampions);
+  }
+
   return (
     <div>
-      <LevelSelector />
-      <ChampionSelector />
+      <div className="w-full flex justify-center items-center h-36 text-4xl font-bold">
+        <div>TFT Headliner Rolldown Calculator</div>
+      </div>
+      <LevelSelector level={level} changeLevel={changeLevel}/>
+      <ChampionSelector level={level} champions={champions} changeChampions={changeChampions}/>
       <button>Run Button</button>
       <Output />
 
