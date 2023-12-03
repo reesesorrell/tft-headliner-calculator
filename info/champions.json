@@ -331,8 +331,7 @@
         "name": "Akali K/DA",
         "traits": [
             "K/DA",
-            "Executioner",
-            "Breakout"
+            "Executioner"
         ],
         "cost": 4
     },
@@ -340,8 +339,7 @@
         "name": "Akali TD",
         "traits": [
             "True Damage",
-            "Executioner",
-            "Breakout"
+            "Executioner"
         ],
         "cost": 4
     },
@@ -428,7 +426,6 @@
     {
         "name": "Illaoi",
         "traits": [
-            "ILLBEATS",
             "Brawler"
         ],
         "cost": 5
@@ -436,7 +433,6 @@
     {
         "name": "Jhin",
         "traits": [
-            "Maestro",
             "Big Shot"
         ],
         "cost": 5
@@ -445,7 +441,6 @@
         "name": "Kayn",
         "traits": [
             "HEARTSTEEL",
-            "Wildcard",
             "Edgelord"
         ],
         "cost": 5
@@ -469,7 +464,6 @@
     {
         "name": "Sona",
         "traits": [
-            "Mixmaster",
             "Spellweaver"
         ],
         "cost": 5

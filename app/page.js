@@ -24,7 +24,6 @@ export default function Home() {
       </div>
       <LevelSelector level={level} changeLevel={changeLevel}/>
       <ChampionSelector level={level} champions={champions} changeChampions={changeChampions}/>
-      <button>Run Button</button>
       <Output />
 
     </div>
