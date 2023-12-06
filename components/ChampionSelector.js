@@ -81,11 +81,11 @@ export default function ChampionSelector({level, champions, changeChampions}) {
 
     return (
         <div className={`${level ? "visible" : "hidden"}`}>
-            <div className="w-full text-center text-2xl mt-12">Champion Selector</div>
+            <div className="w-full text-center text-2xl mt-12 font-semibold">Champion Selector</div>
             <form onSubmit={handleSubmit}>
                 {championList}
                 <div className="flex justify-center">
-                    <input className="px-4 py-2 border mt-8" type="submit" onClick={handleSubmit}/>
+                    <input className="px-4 py-2 border mt-8 mb-20" type="submit" onClick={handleSubmit}/>
                 </div>
             </form>
         </div>

@@ -19,7 +19,7 @@ export default function LevelSelector({level, changeLevel, changeChampions}) {
 
     return (
         <div>
-            <div className="w-full text-center text-2xl mb-6">Level Selector</div>
+            <div className="w-full text-center text-2xl mb-6 font-semibold">Level Selector</div>
             <div className="w-3/4 mx-auto flex justify-around">
                 {levels}
             </div>

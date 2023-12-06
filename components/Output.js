@@ -2,6 +2,7 @@ import championJSON from "@/info/champions.json"
 import headlinerOdds from "@/info/headliner-odds.json"
 import poolTotal from "@/info/pool-total.json"
 import { useEffect, useState } from "react";
+import OddsLineChart from "@/components/OddsLineChart"
 
 export default function Output({level, champions}) {
 
@@ -52,18 +53,34 @@ export default function Output({level, champions}) {
     function generateOddsArray() {
         let chanceOfMissing = 1 - oddsPerRoll;
         let oddsArray = []
-        for (let i = 0; i < 50; i++) {
-            oddsArray.push(Math.round((1 - chanceOfMissing**i)*100)/100)
+        for (let i = 0; i < 30; i += 1) {
+            oddsArray.push(Math.round((1 - chanceOfMissing**i)*10000)/10000)
         }
         return oddsArray
     }
-    
+
+    var oddsArray = [];
     if (oddsPerRoll > 0) {
-        let oddsArray = generateOddsArray();
-        
+        oddsArray = generateOddsArray();
+    }
+
+    function findOddsColor(odd) {
+        console.log(odd);
+        if (odd < .05) {
+            return "text-red-500";
+        }
+        else if (odd < .1) {
+            return "text-orange-500";
+        }
+        else {
+            return "text-green-500"
+        }
     }
 
     return (
-        <div>{oddsPerRoll}</div>
+        <div className={`${(champions.length > 0) ? "visible" : "hidden"}`}>
+            <div className="w-full text-center text-xl font-semibold"><div className={`inline ${findOddsColor(oddsPerRoll)}`}>{(Math.round(oddsPerRoll*10000)/100)}%</div> Chance of Hitting Per Roll</div>
+            <OddsLineChart oddsArray={oddsArray}/>
+        </div>
     )
 }
