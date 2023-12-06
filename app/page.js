@@ -22,8 +22,8 @@ export default function Home() {
       <div className="w-full flex justify-center items-center h-36 text-4xl font-bold">
         <div>TFT Headliner Rolldown Calculator</div>
       </div>
-      <LevelSelector level={level} changeLevel={changeLevel}/>
-      <ChampionSelector level={level} champions={champions} changeChampions={changeChampions}/>
+      <LevelSelector level={level} changeLevel={changeLevel} changeChampions={changeChampions}/>
+      <ChampionSelector level={level} champions={champions} changeChampions={changeChampions} setRun={setRun}/>
       <Output />
 
     </div>

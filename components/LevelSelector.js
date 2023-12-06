@@ -1,13 +1,15 @@
 
 
-export default function LevelSelector({level, changeLevel}) {
+export default function LevelSelector({level, changeLevel, changeChampions}) {
 
     const levels = [];
     for (let i = 1; i <= 10; i++) {
         levels.push(<button 
             className={`${(i == level) ? "bg-slate-100" : "bg-slate-400"} rounded-full w-14 h-14 text-black text-xl`} 
             key={"button" + i} 
-            onClick={() => changeLevel(i)}>{i}
+            onClick={() => {
+                changeLevel(i); 
+                changeChampions([])}}>{i}
             </button>)
     }
 
