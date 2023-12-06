@@ -74,7 +74,7 @@
         "cost": 1
     },
     {
-        "name": "Tahm Kench",
+        "name": "Tahm-Kench",
         "traits": [
             "Country",
             "Brawler"
@@ -245,7 +245,7 @@
         "cost": 3
     },
     {
-        "name": "Miss Fortune",
+        "name": "Miss-Fortune",
         "traits": [
             "Jazz",
             "Big Shot"
@@ -328,17 +328,9 @@
         "cost": 4
     },
     {
-        "name": "Akali K/DA",
+        "name": "Akali",
         "traits": [
-            "K/DA",
-            "Executioner"
-        ],
-        "cost": 4
-    },
-    {
-        "name": "Akali TD",
-        "traits": [
-            "True Damage",
+            "K/DA True Damage",
             "Executioner"
         ],
         "cost": 4
@@ -392,7 +384,7 @@
         "cost": 4
     },
     {
-        "name": "Twisted Fate",
+        "name": "Twisted-Fate",
         "traits": [
             "Disco",
             "Dazzler"

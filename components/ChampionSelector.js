@@ -1,7 +1,15 @@
 import championJSON from "@/info/champions.json"
 import headlinerOdds from "@/info/headliner-odds.json"
+import { useEffect, useState } from "react"
 
-export default function ChampionSelector({level, champions, changeChampions, setRun}) {
+export default function ChampionSelector({level, champions, changeChampions}) {
+
+    const [tempChamps, setTempChamps] = useState([])
+
+    useEffect(() => {
+        setTempChamps([...champions]);
+    }, [champions]);
+
 
     //get list of costs of the champs that appear as headliners at that level
     let champCosts = []
@@ -17,19 +25,18 @@ export default function ChampionSelector({level, champions, changeChampions, set
     function handleChange(e) {
         const name = e.target.name;
         const checked = e.target.checked;
-        let copy = champions;
+        let copy = tempChamps;
         if (checked) {
             copy.push(name)
-            changeChampions(copy)
+            setTempChamps(copy)
         }
         else {
             const index = copy.indexOf(name);
             if (index >= 0) {
                 copy.splice(index, 1);
-                changeChampions(copy);
+                setTempChamps(copy);
             }
         }
-        console.log(champions);
     }
     
     //make a list of inputs from the characters of those costs
@@ -55,7 +62,7 @@ export default function ChampionSelector({level, champions, changeChampions, set
                 }
                 champListOfSameCost.push(
                     <div className="flex flex-col w-36 gap-y-1" key={name}>
-                        <div className="text-xl">{name}</div>
+                        <div className="text-xl">{name.split("-").join(" ")}</div>
                         {traitsListInput}
                     </div>
                 )
@@ -68,7 +75,7 @@ export default function ChampionSelector({level, champions, changeChampions, set
 
     //handle submission of form
     function handleSubmit(e) {
-        setRun(true);
+        changeChampions(tempChamps);
         e.preventDefault();
     }
 

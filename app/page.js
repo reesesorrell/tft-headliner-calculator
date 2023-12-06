@@ -7,7 +7,6 @@ import Output from "@/components/Output";
 export default function Home() {
   const [level, setLevel] = useState(0);
   const [champions, setChampions] = useState([])
-  const [run, setRun] = useState(false);
 
   function changeLevel(newLevel) {
     setLevel(newLevel);
@@ -23,8 +22,8 @@ export default function Home() {
         <div>TFT Headliner Rolldown Calculator</div>
       </div>
       <LevelSelector level={level} changeLevel={changeLevel} changeChampions={changeChampions}/>
-      <ChampionSelector level={level} champions={champions} changeChampions={changeChampions} setRun={setRun}/>
-      <Output />
+      <ChampionSelector level={level} champions={champions} changeChampions={changeChampions}/>
+      <Output level={level} champions={champions}/>
 
     </div>
   )
